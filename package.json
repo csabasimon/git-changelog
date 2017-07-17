@@ -1,27 +1,91 @@
 {
-  "name": "git-changelog-updated",
-  "version": "1.0.1",
+  "_args": [
+    [
+      {
+        "raw": "git-changelog-updated",
+        "scope": null,
+        "escapedName": "git-changelog-updated",
+        "name": "git-changelog-updated",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "C:\\Projects\\EKR\\ekr-frontend"
+    ]
+  ],
+  "_from": "git-changelog-updated@latest",
+  "_id": "git-changelog-updated@1.0.1",
+  "_inCache": true,
+  "_location": "/git-changelog-updated",
+  "_nodeVersion": "7.6.0",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/git-changelog-updated-1.0.1.tgz_1500299528716_0.7134857992641628"
+  },
+  "_npmUser": {
+    "name": "simon.csaba",
+    "email": "simon.csaba@openminds.hu"
+  },
+  "_npmVersion": "4.1.2",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "git-changelog-updated",
+    "scope": null,
+    "escapedName": "git-changelog-updated",
+    "name": "git-changelog-updated",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/git-changelog-updated/-/git-changelog-updated-1.0.1.tgz",
+  "_shasum": "30f067ab38d35f8c6f29de29e7b780c9ac290239",
+  "_shrinkwrap": null,
+  "_spec": "git-changelog-updated",
+  "_where": "C:\\Projects\\EKR\\ekr-frontend",
+  "author": {
+    "name": "simon csaba"
+  },
+  "bugs": {
+    "url": "https://github.com/csabasimon/git-changelog/issues"
+  },
+  "dependencies": {},
   "description": "Git changelog tool",
-  "main": "Gruntfile.js",
+  "devDependencies": {},
   "directories": {
     "test": "test"
   },
-  "dependencies": {},
-  "devDependencies": {},
-  "scripts": {
-    "test": "git-changelog"
+  "dist": {
+    "shasum": "30f067ab38d35f8c6f29de29e7b780c9ac290239",
+    "tarball": "https://registry.npmjs.org/git-changelog-updated/-/git-changelog-updated-1.0.1.tgz"
   },
+  "gitHead": "b96184e09d1ed37ed82850d6cfff8d1b566eb376",
+  "homepage": "https://github.com/csabasimon/git-changelog#readme",
+  "keywords": [
+    "changelog"
+  ],
+  "license": "ISC",
+  "main": "Gruntfile.js",
+  "maintainers": [
+    {
+      "name": "simon.csaba",
+      "email": "simon.csaba@openminds.hu"
+    }
+  ],
+  "bin": {
+    "git-changelog-updated": "tasks/command.js"
+  },
+  "name": "git-changelog-updated",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/csabasimon/git-changelog.git"
   },
-  "keywords": [
-    "changelog"
-  ],
-  "author": "simon csaba",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/csabasimon/git-changelog/issues"
+  "scripts": {
+    "test": "git-changelog"
   },
-  "homepage": "https://github.com/csabasimon/git-changelog#readme"
+  "version": "1.0.2"
 }
