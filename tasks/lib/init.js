@@ -22,7 +22,7 @@ function getRepoFailure(deferred, err) {
 function init(params, loadRC) {
   this.log('debug', 'Initializing changelog options');
   var module = this;
-
+  this.log('INIT');
   var deferred = q.defer();
 
   this.initOptions(params);
@@ -30,19 +30,19 @@ function init(params, loadRC) {
 
   promise
     .then(function(options) {
-
+	
       module.options = _.defaults(options, module.options);
-
+		
       module.log('info', '  - The APP name is', module.options.app_name);
       module.log('info', '  - The output file is', module.options.file);
       module.log('info', '  - The template file is', module.options.template);
-
+	 
       module.options.grep_commits = module.options.sections.map(function(section) {
         return section.grep;
       }).join('|');
 
       module.log('debug', 'Grep commits: ', module.options.grep_commits);
-    
+
       return module.getRepoUrl();
     })
     .then(getRepoSuccess.bind(this, deferred))

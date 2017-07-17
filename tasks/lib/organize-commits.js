@@ -10,7 +10,7 @@ function grepSection(sections, commit){
   var keys = Object.keys(sections);
 
   for (var i = 0; i < keys.length; i++){
-    if(commit.subject.indexOf(keys[i]) === 0){
+    if(commit.subject.indexOf(keys[i]) !== -1){
       return sections[keys[i]];
     }
   }

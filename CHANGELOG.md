@@ -1,8 +1,13 @@
-<img width="300px" src="https://github.com/rafinskipg/git-changelog/raw/master/images/git-changelog-logo.png" />
+# my name
 
-# Git changelog
 
-_Git changelog is a utility tool for generating changelogs. It is free and opensource. :)_
+
+## Bug Fixes
+
+  - **provider**
+    - Added provider option in the command
+  ([8f3b3fef](https://github.com/rafinskipg/git-changelog/commit/8f3b3fef0d123e4fd11ea79bb9552285befc6689))
+
 
 
 

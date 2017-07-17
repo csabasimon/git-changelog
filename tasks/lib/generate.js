@@ -1,7 +1,6 @@
 'use strict';
 
 var debug = require('debug')('changelog:generate');
-
 function generateFromCommits(commits, sections) {
   this.message('parsed commits', commits.length);
   this.log('debug', 'Parsed', commits.length, 'commits');
@@ -12,7 +11,7 @@ function generateFromCommits(commits, sections) {
 
 function generateFromTag(tag) {
   var readGitLog;
-  
+  this.options.tag = tag;
   if (typeof(tag) !== 'undefined' && tag && tag !== false) {
     this.log('info', 'Reading git log since', tag);
     this.message('since tag', tag);
@@ -31,9 +30,14 @@ function generateFromTag(tag) {
 function generate(params, loadRC) {
   debug('generating ...');
   var self = this;
-
+ 
   return this.init(params, loadRC)
     .then(this.getPreviousTag.bind(this))
+	.then(function(tag){
+		self.options.tag = tag;
+		self.options.file = self.options.file + self.options.tag +  '.md';
+		return Promise.resolve(tag);
+	})
     .then(generateFromTag.bind(this))
     .then(function(){
       return self.options;

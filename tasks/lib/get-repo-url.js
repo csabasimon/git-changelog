@@ -23,7 +23,7 @@ function getRepoUrl() {
   } else {
     //IF we dont find a previous tag, we get all the commits from the beginning - The bigbang of the code
     debug('calling git repo url command');
-    child.exec(this.cmd.gitRepoUrl, cmdDone.bind(null, deferred));
+    child.exec(this.cmd.gitRepoUrl, null, cmdDone.bind(null, deferred));
   }
 
   return deferred.promise;

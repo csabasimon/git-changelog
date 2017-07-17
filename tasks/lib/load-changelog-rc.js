@@ -6,7 +6,7 @@ var q = require('q'),
 
 function readChangelogRcFile(changelogrc, logger) {
   debug('finding changelogrc file');
-
+	  debug('ASDASDASD',changelogrc);
   if(!changelogrc){
     return q.reject();
   }
@@ -31,13 +31,12 @@ function loadChangelogRc() {
   this.log('debug','loading changelog rc specification from', this.options.changelogrc);
   var module = this;
   var deferred = q.defer();
-
+	
   readChangelogRcFile(this.options.changelogrc, this.log.bind(this))
     .then(function(contents){
 
       try{
         contents = JSON.parse(contents);
-
         deferred.resolve(contents);
       }catch(e){
         module.log('error', 'Invalid changelogrc file', e);
@@ -54,7 +53,6 @@ function loadChangelogRc() {
       module.log('info', 'Sections: ', sectionNames);
       deferred.resolve({});
     }.bind(this));
-
   return deferred.promise;
 }
 
