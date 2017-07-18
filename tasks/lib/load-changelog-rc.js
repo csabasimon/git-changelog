@@ -6,7 +6,6 @@ var q = require('q'),
 
 function readChangelogRcFile(changelogrc, logger) {
   debug('finding changelogrc file');
-	  debug('ASDASDASD',changelogrc);
   if(!changelogrc){
     return q.reject();
   }

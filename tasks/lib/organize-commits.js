@@ -4,9 +4,9 @@ var debug = require('debug')('changelog:organizeCommits');
 var format = require('util').format;
 var _ = require('lodash');
 
-function grepSection(sections, commit){
+function grepSection(sections, commit){ 
   //TODO: MONKEY METHOD, please use the regexp greps
-
+	
   var keys = Object.keys(sections);
 
   for (var i = 0; i < keys.length; i++){
@@ -14,23 +14,25 @@ function grepSection(sections, commit){
       return sections[keys[i]];
     }
   }
-
+	
   return null;
 }
 
 function organizeCommit(sections, commit) {
   var section = commit.type ? sections[commit.type] : grepSection(sections, commit) ;
-  
+ 
   var component = commit.component ? commit.component.toLowerCase() : this.emptyComponent;
 
   if (section) {
     section.commitsCount++;
     
     if(component === this.emptyComponent){
-      section.commits.push(commit);
+	  if(section.commits.map(c => c.subject).indexOf(commit.subject) === -1) {
+	    section.commits.push(commit);
+	  }
     }else{
       section.components[component] = section.components[component] || [];
-      section.components[component].push(commit);  
+	  section.components[component].push(commit);  
     }
   }
 
