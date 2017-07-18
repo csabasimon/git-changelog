@@ -110,5 +110,5 @@
     "preversion": "npm test",
     "coverage": "istanbul cover node_modules/.bin/_mocha -- -R dot"
   },
-  "version": "1.0.4"
+  "version": "1.0.5"
 }
