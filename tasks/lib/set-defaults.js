@@ -6,7 +6,8 @@ function setDefaults() {
   debug('setting defaults');
   this.options = {};
   this.cmd = {
-    gitTag: 'git describe --abbrev=0',
+    gitTag: 'git tag | tail -n 2 | head -n 1',
+    gitCurrentTag: 'git describe --abbrev=0',
     gitRepoUrl: 'git config --get remote.origin.url',
     gitLog: null,
     gitLogNoTag: null

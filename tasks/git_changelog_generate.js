@@ -33,6 +33,7 @@ Changelog.prototype.readGitLog = require('./lib/read-gitlog');
 Changelog.prototype.writeChangelog = require('./lib/write-change-log');
 Changelog.prototype.organizeCommits = require('./lib/organize-commits');
 Changelog.prototype.getPreviousTag = require('./lib/get-previous-tag');
+Changelog.prototype.getCurrentTag = require('./lib/get-current-tag');
 Changelog.prototype.getRepoUrl = require('./lib/get-repo-url');
 Changelog.prototype.generate = require('./lib/generate');
 

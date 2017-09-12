@@ -91,7 +91,6 @@ if (process.argv.join('').replace(/\\/g,'/').indexOf('/grunt') === -1) {
       console.log('  - Generating log since tag %s', program.tag);
     }
   }
-
   git_changelog.generate(options, true).then(function(){
     git_changelog.log('success', 'Finished generating log Yai!');
   });

@@ -4,9 +4,9 @@ var debug = require('debug')('changelog:organizeCommits');
 var format = require('util').format;
 var _ = require('lodash');
 
-function grepSection(sections, commit){ 
+function grepSection(sections, commit){
   //TODO: MONKEY METHOD, please use the regexp greps
-	
+
   var keys = Object.keys(sections);
 
   for (var i = 0; i < keys.length; i++){
@@ -14,25 +14,25 @@ function grepSection(sections, commit){
       return sections[keys[i]];
     }
   }
-	
+
   return null;
 }
 
 function organizeCommit(sections, commit) {
   var section = commit.type ? sections[commit.type] : grepSection(sections, commit) ;
- 
+
   var component = commit.component ? commit.component.toLowerCase() : this.emptyComponent;
 
   if (section) {
     section.commitsCount++;
-    
+
     if(component === this.emptyComponent){
 	  if(section.commits.map(c => c.subject).indexOf(commit.subject) === -1) {
 	    section.commits.push(commit);
 	  }
     }else{
       section.components[component] = section.components[component] || [];
-	  section.components[component].push(commit);  
+	  section.components[component].push(commit);
     }
   }
 
@@ -49,7 +49,7 @@ function organizeCommit(sections, commit) {
       sections.BREAKING.commits.push(breakingCommit);
     }else{
       sections.BREAKING.components[component] = sections.BREAKING.components[component] || [];
-      sections.BREAKING.components[component].push(breakingCommit);  
+      sections.BREAKING.components[component].push(breakingCommit);
     }
   }
 }
@@ -70,7 +70,7 @@ function organizeCommits(commits, defaultSections) {
 
   defaultSections.forEach(function(sectionInfo){
     var sectionType = sectionInfo.grep.replace('^', '');
-    
+
     sections[sectionType] = {
       title: sectionInfo.title,
       components: {},
@@ -87,9 +87,9 @@ function organizeCommits(commits, defaultSections) {
 
   return _.compact(Object.keys(sections).map(function(key){
     var section = sections[key];
-    
+
     section.components = Object.keys(section.components).sort().map(function(key){
-      return { name: key, 
+      return { name: key,
         commits: section.components[key]
       };
     });
