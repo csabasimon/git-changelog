@@ -8,14 +8,14 @@ function readPreviousChangelog() {
     debug('Read previous file');
     var self = this;
     var dfd = q.defer();
-
-    fs.exists('./Change_logs/CHANGELOGS.md', function (exists) {
+    console.log('File loc', self.options.file);
+    fs.exists(self.options.file, function (exists) {
         if (!exists) {
-            fs.openSync('./Change_logs/CHANGELOGS.md', 'w');
+            fs.openSync(self.options.file, 'w');
             return dfd.resolve('');
 
         } else {
-            fs.readFile('./Change_logs/CHANGELOGS.md', 'utf8', function (err, data) {
+            fs.readFile(self.options.file, 'utf8', function (err, data) {
                 if (err) {
                     console.log('error', 'No changelog found', err);
                     dfd.reject(err);

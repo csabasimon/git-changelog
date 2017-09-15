@@ -38,7 +38,7 @@ function generate(params, loadRC) {
         .then(function (curr) {
 
             curr = curr.substring(0, curr.length - 1);
-            self.options.file = 'Change_logs/CHANGELOGS.md';
+            self.options.file = self.options.file + 'CHANGELOGS.md';
         })
         .then(this.getPreviousTag.bind(this))
         .then(function (tag) {
