@@ -36,7 +36,7 @@ Changelog.prototype.getPreviousTag = require('./lib/get-previous-tag');
 Changelog.prototype.getCurrentTag = require('./lib/get-current-tag');
 Changelog.prototype.getRepoUrl = require('./lib/get-repo-url');
 Changelog.prototype.generate = require('./lib/generate');
-
+Changelog.prototype.readPreviousChangelog = require('./lib/read-previous-changelog');
 Changelog.prototype.log = require('./lib/log');
 
 var changelog = new Changelog();

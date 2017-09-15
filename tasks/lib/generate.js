@@ -2,7 +2,6 @@
 var exec = require('child_process').exec;
 var debug = require('debug')('changelog:generate');
 
-var asd;
 function generateFromCommits(commits, sections) {
     this.message('parsed commits', commits.length);
     this.log('debug', 'Parsed', commits.length, 'commits');
@@ -12,6 +11,7 @@ function generateFromCommits(commits, sections) {
 }
 
 function generateFromTag(tag) {
+
     var readGitLog;
     this.options.tag = tag;
     if (typeof(tag) !== 'undefined' && tag && tag !== false) {
@@ -32,12 +32,13 @@ function generateFromTag(tag) {
 function generate(params, loadRC) {
     debug('generating ...');
     var self = this;
+
     return this.init(params, loadRC)
         .then(this.getCurrentTag.bind(this))
         .then(function (curr) {
 
             curr = curr.substring(0, curr.length - 1);
-            self.options.file = self.options.file + curr + '.md';
+            self.options.file = 'Change_logs/CHANGELOGS.md';
         })
         .then(this.getPreviousTag.bind(this))
         .then(function (tag) {

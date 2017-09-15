@@ -11,16 +11,28 @@
         "type": "tag"
       },
       "C:\\Projects\\EKR\\ekr-frontend"
+    ],
+    [
+      {
+        "raw": "git-changelog-updated",
+        "scope": null,
+        "escapedName": "git-changelog-updated",
+        "name": "git-changelog-updated",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "C:\\Projects\\EKR\\ekr-frontend"
     ]
   ],
-  "_from": "git-changelog-updated@latest",
-  "_id": "git-changelog-updated@1.0.1",
+  "_from": "git-changelog-updated",
+  "_id": "git-changelog-updated@1.0.4",
   "_inCache": true,
   "_location": "/git-changelog-updated",
   "_nodeVersion": "7.6.0",
   "_npmOperationalInternal": {
     "host": "s3://npm-registry-packages",
-    "tmp": "tmp/git-changelog-updated-1.0.1.tgz_1500299528716_0.7134857992641628"
+    "tmp": "tmp/git-changelog-updated-1.0.4.tgz_1500376374077_0.5416737021878362"
   },
   "_npmUser": {
     "name": "simon.csaba",
@@ -40,13 +52,16 @@
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "https://registry.npmjs.org/git-changelog-updated/-/git-changelog-updated-1.0.1.tgz",
-  "_shasum": "30f067ab38d35f8c6f29de29e7b780c9ac290239",
+  "_resolved": "https://registry.npmjs.org/git-changelog-updated/-/git-changelog-updated-1.0.4.tgz",
+  "_shasum": "e98a138956c0fc838685583fc0cc20c4bbfcfc70",
   "_shrinkwrap": null,
   "_spec": "git-changelog-updated",
   "_where": "C:\\Projects\\EKR\\ekr-frontend",
   "author": {
     "name": "simon csaba"
+  },
+  "bin": {
+    "git-changelog-updated": "tasks/command.js"
   },
   "bugs": {
     "url": "https://github.com/csabasimon/git-changelog/issues"
@@ -61,7 +76,7 @@
   },
   "description": "Git changelog tool",
   "devDependencies": {
-   "chai": "^2.2.0",
+    "chai": "^2.2.0",
     "chai-as-promised": "^5.0.0",
     "grunt": "^1.0.0",
     "grunt-contrib-clean": "^1.0.0",
@@ -76,8 +91,8 @@
     "test": "test"
   },
   "dist": {
-    "shasum": "30f067ab38d35f8c6f29de29e7b780c9ac290239",
-    "tarball": "https://registry.npmjs.org/git-changelog-updated/-/git-changelog-updated-1.0.1.tgz"
+    "shasum": "e98a138956c0fc838685583fc0cc20c4bbfcfc70",
+    "tarball": "https://registry.npmjs.org/git-changelog-updated/-/git-changelog-updated-1.0.4.tgz"
   },
   "gitHead": "b96184e09d1ed37ed82850d6cfff8d1b566eb376",
   "homepage": "https://github.com/csabasimon/git-changelog#readme",
@@ -92,23 +107,20 @@
       "email": "simon.csaba@openminds.hu"
     }
   ],
-  "bin": {
-    "git-changelog-updated": "tasks/command.js"
-  },
-  "preferGlobal": "true",
   "name": "git-changelog-updated",
   "optionalDependencies": {},
+  "preferGlobal": "true",
   "readme": "ERROR: No README data found!",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/csabasimon/git-changelog.git"
   },
-    "scripts": {
-    "pre-test": "grunt",
+  "scripts": {
+    "coverage": "istanbul cover node_modules/.bin/_mocha -- -R dot",
     "post-test": "grunt",
-    "test": "mocha -R spec test/**/*.spec.js",
+    "pre-test": "grunt",
     "preversion": "npm test",
-    "coverage": "istanbul cover node_modules/.bin/_mocha -- -R dot"
+    "test": "mocha -R spec test/**/*.spec.js"
   },
-  "version": "1.0.8"
+  "version": "1.0.4"
 }
