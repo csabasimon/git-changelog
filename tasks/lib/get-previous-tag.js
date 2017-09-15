@@ -28,7 +28,7 @@ function getPreviousTag() {
             module.log('debug', 'Getting last tag');
             //IF we dont find a previous tag, we get all the commits from the beggining - The bigbang of the code
             debug('calling git tag command');
-            child.exec(module.cmd.gitTag, cmdDone.bind(null, resolve, reject));
+            child.exec(module.cmd.gitCurrentTag, cmdDone.bind(null, resolve, reject));
         }
     });
 }
