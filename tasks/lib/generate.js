@@ -36,7 +36,8 @@ function generate(params, loadRC) {
     return this.init(params, loadRC)
         .then(this.getCurrentTag.bind(this))
         .then(function (curr) {
-
+            console.log('curr', curr);
+            self.options.version_name = curr;
             curr = curr.substring(0, curr.length - 1);
             self.options.file = self.options.file + 'CHANGELOGS.md';
         })
